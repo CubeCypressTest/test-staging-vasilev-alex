@@ -1,6 +1,6 @@
 ///
 
-cube(`Orders`, {
+cube(`orders`, {
     sql: `
     select 1 as id, 100 as amount, 'new' status
     UNION ALL
@@ -13,7 +13,7 @@ cube(`Orders`, {
     select 5 as id, 600 as amount, 'shipped' status
     `,
   
-    preAggregations: {
+    pre_aggregations: {
       // Pre-Aggregations definitions go here
       // Learn more here: https://cube.dev/docs/caching/pre-aggregations/getting-started
     },
@@ -23,7 +23,7 @@ cube(`Orders`, {
         type: `count`
       },
   
-      totalAmount: {
+      total_amount: {
         sql: `amount`,
         type: `sum`
       }
